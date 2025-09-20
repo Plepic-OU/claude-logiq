@@ -1,0 +1,25 @@
+[project]
+name = "claude-logiq"
+version = "0.1.0"
+description = "Command line tool for analyzing nginxplus log files"
+readme = "README.md"
+authors = [
+    { name = "Joosep Simm", email = "joosep@gridraven.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "isodate>=0.6.1",
+]
+
+[project.scripts]
+claude-logiq = "claude_logiq:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+    "ruff>=0.13.0",
+]
