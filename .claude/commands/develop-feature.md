@@ -1,6 +1,7 @@
 # Task summary
 
-Goal is to develop a new feature. This involves planning, coding, testing. Your goal is to be the main facilitator for completion of the feature.
+Goal is to develop a new feature. This involves planning, coding, testing.
+Your goal is to be the main facilitator for completion of the feature.
 
 ## Using subagents
 Use subagents proactively.
