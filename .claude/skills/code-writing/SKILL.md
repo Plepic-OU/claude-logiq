@@ -1,6 +1,6 @@
 ---
 name: code-writing
-description: Use always when writing code or test code. Every programming language can use these principles.
+description: Use always when writing or creating new code or test code. Every programming language must use these principles.
 ---
 
 # Code Writing
