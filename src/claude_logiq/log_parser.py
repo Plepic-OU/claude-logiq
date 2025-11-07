@@ -56,7 +56,7 @@ class LogParser:
             IOError: If there are issues reading the file
         """
         try:
-            with open(file_path, 'r', encoding='utf-8') as file:
+            with open(file_path, "r", encoding="utf-8") as file:
                 for line_num, line in enumerate(file, 1):
                     line = line.strip()
                     if not line:
@@ -100,21 +100,21 @@ class LogParser:
             raise json.JSONDecodeError(f"Invalid JSON: {e}", line, e.pos)
 
         # Extract timestamp
-        timestamp = log_data.get('timestamp')
+        timestamp = log_data.get("timestamp")
         if not isinstance(timestamp, int):
             logger.debug("Skipping entry: missing or invalid timestamp")
             return None
 
         # Extract upstream metrics from stream.upstreams
         upstream_metrics = []
-        stream_data = log_data.get('stream', {})
-        upstreams_data = stream_data.get('upstreams', {})
+        stream_data = log_data.get("stream", {})
+        upstreams_data = stream_data.get("upstreams", {})
 
         for pool_name, pool_data in upstreams_data.items():
             if not isinstance(pool_data, dict):
                 continue
 
-            peers = pool_data.get('peers', [])
+            peers = pool_data.get("peers", [])
             if not isinstance(peers, list):
                 continue
 
@@ -123,15 +123,18 @@ class LogParser:
                     continue
 
                 # Extract server identifier
-                server = peer.get('server', 'unknown')
+                server = peer.get("server", "unknown")
 
                 # Extract timing metrics
-                connect_time = self._extract_timing_metric(peer, 'connect_time')
-                first_byte_time = self._extract_timing_metric(peer, 'first_byte_time')
-                response_time = self._extract_timing_metric(peer, 'response_time')
+                connect_time = self._extract_timing_metric(peer, "connect_time")
+                first_byte_time = self._extract_timing_metric(peer, "first_byte_time")
+                response_time = self._extract_timing_metric(peer, "response_time")
 
                 # Only create metrics entry if at least one timing value is present
-                if any(t is not None for t in [connect_time, first_byte_time, response_time]):
+                if any(
+                    t is not None
+                    for t in [connect_time, first_byte_time, response_time]
+                ):
                     upstream_metrics.append(
                         UpstreamMetrics(
                             pool_name=pool_name,
@@ -149,7 +152,9 @@ class LogParser:
 
         return None
 
-    def _extract_timing_metric(self, peer_data: dict, metric_name: str) -> Optional[int]:
+    def _extract_timing_metric(
+        self, peer_data: dict, metric_name: str
+    ) -> Optional[int]:
         """
         Extract a timing metric from peer data, handling various data types.
 
@@ -167,8 +172,8 @@ class LogParser:
 
         # Handle different data types
         if isinstance(value, (int, float)):
-            # Convert to int (milliseconds)
-            return int(value) if value >= 0 else None
+            # Round to nearest int (milliseconds)
+            return round(value) if value >= 0 else None
 
         # Skip invalid data types
         return None
@@ -181,10 +186,12 @@ class LogParser:
             Dictionary with parsing statistics
         """
         return {
-            'parsed_entries': self.parsed_entries,
-            'skipped_entries': self.skipped_entries,
-            'error_entries': self.error_entries,
-            'total_processed': self.parsed_entries + self.skipped_entries + self.error_entries
+            "parsed_entries": self.parsed_entries,
+            "skipped_entries": self.skipped_entries,
+            "error_entries": self.error_entries,
+            "total_processed": self.parsed_entries
+            + self.skipped_entries
+            + self.error_entries,
         }
 
     def reset_stats(self) -> None:
