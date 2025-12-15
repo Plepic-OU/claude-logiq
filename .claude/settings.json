@@ -35,8 +35,13 @@
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs",
       "Bash(chmod:*)",
-      "Bash(bash:*)"
+      "Bash(bash:*)",
+      "Bash(gh issue list:*)",
+      "Bash(gh issue view:*)",
+      "Skill(code-refactoring)"
     ],
-    "deny": []
+    "deny": [
+      "Read(examples/**)"
+    ]
   }
 }
