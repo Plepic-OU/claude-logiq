@@ -1,7 +1,7 @@
 ---
 name: qa-validator
 description: Use this agent when you need to validate the quality and correctness of work completed by other agents or when you want to perform quality assurance checks on code, implementations, or solutions. Examples: <example>Context: User has just implemented a new authentication system using another agent. user: 'I've just finished implementing the JWT authentication system. Can you check if it's working correctly?' assistant: 'I'll use the qa-validator agent to perform quality assurance checks on your JWT authentication implementation.' <commentary>Since the user wants quality assurance on completed work, use the qa-validator agent to check the implementation for correctness, edge cases, and potential issues.</commentary></example> <example>Context: Another agent has created a data processing pipeline. user: 'The data-processor agent just built a CSV parsing system. Before I deploy it, I want to make sure it handles all the edge cases properly.' assistant: 'Let me use the qa-validator agent to thoroughly test your CSV parsing system for edge cases and quality issues.' <commentary>The user wants QA validation of completed work before deployment, so use the qa-validator agent to check for edge cases and quality issues.</commentary></example>
-model: sonnet
+model: inherit
 color: cyan
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: cli-expert
 description: Use this agent when you need to create, modify, or improve command-line interfaces (CLIs). This includes designing CLI argument structures, implementing command parsing, creating help systems, handling user input validation, or optimizing CLI usability. Examples: <example>Context: User wants to create a new CLI tool for file processing. user: 'I need to build a CLI that processes text files and outputs statistics' assistant: 'I'll use the cli-expert agent to design a user-friendly command-line interface for your text processing tool' <commentary>Since this involves CLI creation, use the cli-expert agent to design the interface with proper argument handling and usability.</commentary></example> <example>Context: User has an existing CLI that needs improvement. user: 'My current CLI is confusing - users don't understand the options' assistant: 'Let me use the cli-expert agent to analyze and improve your CLI's usability' <commentary>CLI modification and usability improvement requires the cli-expert agent's specialized knowledge.</commentary></example>
-model: sonnet
+model: inherit
 color: purple
 ---
 

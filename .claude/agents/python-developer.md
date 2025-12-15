@@ -1,7 +1,7 @@
 ---
 name: python-developer
 description: Use this agent when you need to implement Python functionality, create new Python modules, refactor existing Python code, or develop Python applications following modern best practices. Examples: <example>Context: The user needs a new API client for a third-party service. user: 'I need to create a Python client for the GitHub API that can fetch repository information' assistant: 'I'll use the python-developer agent to implement this API client with proper typing and testing' <commentary>Since the user needs Python code implementation, use the python-developer agent to create the GitHub API client following modern Python practices.</commentary></example> <example>Context: The user has written some Python code and wants it improved. user: 'Here's my data processing script, can you make it more maintainable and add tests?' assistant: 'I'll use the python-developer agent to refactor your code and add comprehensive tests' <commentary>Since the user wants Python code improvement and testing, use the python-developer agent to refactor and test the code.</commentary></example>
-model: sonnet
+model: inherit
 color: orange
 ---
 

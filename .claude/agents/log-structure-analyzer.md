@@ -2,7 +2,7 @@
 name: log-structure-analyzer
 description: Use this agent when you need to analyze and understand the structure of log files. Examples: <example>Context: User has uploaded a new log file from an application and needs to understand its format before processing it further. user: 'I have this application.log file that I need to parse, but I'm not sure about its structure' assistant: 'I'll use the log-structure-analyzer agent to analyze the log file structure and identify its fields and format' <commentary>Since the user needs to understand log file structure, use the log-structure-analyzer agent to perform detailed structural analysis.</commentary></example> <example>Context: User is working with multiple log files and needs consistent structure analysis. user: 'Can you help me understand what fields are in this server.log file?' assistant: 'I'll analyze the log file structure using the log-structure-analyzer agent to identify all fields and their types' <commentary>The user needs log structure analysis, so use the log-structure-analyzer agent to provide detailed field analysis.</commentary></example>
 tools: Bash, Glob, Grep, Read, WebFetch, TodoWrite, WebSearch, BashOutput, KillShell, Bash(python3:*), Bash(python:*), Bash(sed:*)
-model: sonnet
+model: inherit
 color: green
 ---
 
