@@ -1,4 +1,9 @@
-# Task summary
+---
+name: fix-bug
+description: Fix a known bug using a systematic reproduce-fix-validate approach. Use when the user reports a bug and needs help with root cause analysis, implementing the fix, and verifying the resolution.
+---
+
+# Fix Bug
 
 Goal is to fix a known bug by following a systematic approach: reproduce, fix, validate.
 You are the main facilitator for completing the bug fix.
@@ -8,19 +13,22 @@ You are the main facilitator for completing the bug fix.
 Follow this three-phase approach:
 
 ### Phase 1: Reproduce the Bug
+
 1. Gather bug details from the user:
    - What is the expected behavior?
    - What is the actual behavior?
    - Steps to reproduce
    - Any error messages or stack traces
-2Confirm the bug is reproducible before proceeding
+2. Confirm the bug is reproducible before proceeding
 
 ### Phase 2: Fix the Bug
+
 1. Based on root cause analysis, develop a fix
 2. Apply the fix to the codebase
 3. Document what was changed and why in your tracking file
 
 ### Phase 3: Validate the Fix
+
 1. Re-test the original reproduction steps
 2. Verify the bug no longer occurs
 3. Check for any side effects or regressions

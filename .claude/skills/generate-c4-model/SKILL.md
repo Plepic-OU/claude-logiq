@@ -1,12 +1,11 @@
+---
+name: generate-c4-model
+description: Generate or update C4 architecture documentation for any codebase through structured discovery and extraction. Use when the user wants formal C4 model diagrams (context, container, component levels) with Mermaid.
+---
+
 # Generate C4 Architecture Documentation
 
-Generate or update C4 architecture documentation for any codebase through structured discovery and extraction.
-
-## Instructions
-
-You are generating or updating C4 model documentation for this codebase. This command uses a technology-agnostic approach: first understand the stack, then extract architecture data deterministically, then generate documentation.
-
----
+Generate or update C4 architecture documentation for this codebase. This uses a technology-agnostic approach: first understand the stack, then extract architecture data deterministically, then generate documentation.
 
 ## Phase 1: Discover Extraction Methods
 
@@ -22,13 +21,9 @@ Use the **brainstorming skill** to explore how architecture data can be extracte
 
 The goal is deterministic extraction—methods that can be re-run to regenerate accurate data.
 
----
-
 ## Phase 2: Extract Architecture Data
 
 Execute the agreed extraction approach. Output should go to `docs/architecture/extracted/`.
-
----
 
 ## Phase 3: Validate with User
 
@@ -36,8 +31,6 @@ Present extracted data to user for review before generating diagrams. Confirm:
 - All components are discovered
 - Dependencies are accurate and complete
 - No false positives or missing connections
-
----
 
 ## Phase 4: Analyze Architecture
 
@@ -66,8 +59,6 @@ Within each service, identify architectural layers:
 - **Data/Repository**: Data access
 - **Infrastructure**: External integrations
 - **Config**: Configuration management
-
----
 
 ## Phase 5: Generate C4 Documentation
 
@@ -102,8 +93,6 @@ Create an index with:
 - Links to each generated document
 - Instructions for regenerating (referencing the extraction scripts)
 
----
-
 ## Mermaid Style Guide
 
 Use consistent Mermaid diagram styling:
@@ -130,8 +119,6 @@ flowchart TB
     style WhiteBG fill:#ffffff,stroke:#ffffff
 ```
 
----
-
 ## Quality Guidelines
 
 - **Explain "why" not just "what"** - Describe purpose, not just technical function
@@ -141,13 +128,9 @@ flowchart TB
 - **Cross-reference** - Link to related diagrams and existing documentation
 - **Verify completeness** - Count diagram arrows against extracted dependency count
 
----
-
 ## Manual Sections
 
 If a file contains `<!-- MANUAL-START -->` and `<!-- MANUAL-END -->` markers, preserve that content exactly when regenerating.
-
----
 
 ## Output Summary
 
