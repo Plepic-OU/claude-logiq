@@ -1,3 +1,59 @@
+# Getting Started with Claude Code
+
+### 1. Install and log in
+
+Start Claude Code in any terminal:
+```bash
+claude
+```
+Log in with your own Anthropic account when prompted. Once logged in, exit Claude:
+```
+/exit
+```
+
+### 2. Set up the API key
+
+Export the API key provided in the shared Google Sheet:
+```bash
+export ANTHROPIC_API_KEY=sk-ant-...
+```
+
+Start Claude again:
+```bash
+claude
+```
+
+If Claude asks whether to use the API key, answer **yes**.
+
+If it doesn't ask, check that custom API key usage is enabled in your settings:
+```
+/config
+```
+Navigate to API key settings and enable custom key usage.
+
+### 3. Set up your project
+
+Exit Claude and navigate to your project directory:
+```bash
+cd /path/to/your/project
+```
+
+Create the `.claude` directory and copy the workshop settings into it:
+```bash
+mkdir -p .claude
+cp /path/to/claude-logiq/.claude/settings.json .claude/settings.json
+```
+
+### 4. Start Claude with recommended permissions
+
+```bash
+claude --permission-mode acceptEdits
+```
+
+You're ready to go! Claude will auto-approve file edits and most read-only commands. It will still prompt for potentially destructive operations.
+
+---
+
 # Introduction
 This project is example project for showcasing Claude Code features.
 

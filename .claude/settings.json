@@ -1,47 +1,107 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Edit|MultiEdit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash .claude/ruff_format_hook.sh \"$(jq -r '.tool_input.file_path')\" modify"
-          }
-        ]
-      }
-    ]
-  },
   "permissions": {
     "allow": [
-      "Bash(cd:*)",
+      "Read",
+      "Edit",
+      "Write",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "Agent",
+      "TodoWrite",
+      "NotebookEdit",
+
+      "Bash(ls*)",
+      "Bash(tree*)",
+      "Bash(pwd*)",
+      "Bash(wc*)",
+      "Bash(sort*)",
+      "Bash(uniq*)",
+      "Bash(head*)",
+      "Bash(tail*)",
+      "Bash(cat*)",
+      "Bash(diff*)",
+      "Bash(jq*)",
+      "Bash(which*)",
+      "Bash(echo*)",
+      "Bash(date*)",
+      "Bash(env*)",
+      "Bash(printenv*)",
+
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git show*)",
+      "Bash(git branch*)",
+      "Bash(git blame*)",
+      "Bash(git shortlog*)",
+      "Bash(git stash list*)",
+      "Bash(git remote*)",
+      "Bash(git tag*)",
+      "Bash(git rev-parse*)",
+      "Bash(git ls-files*)",
+      "Bash(git config --get*)",
+      "Bash(git config --list*)",
+
+      "Bash(gh pr *)",
+      "Bash(gh issue *)",
+      "Bash(gh repo view*)",
+      "Bash(gh api *)",
+      "Bash(gh run *)",
+
+      "Bash(python*)",
+      "Bash(python3*)",
+      "Bash(uv run*)",
+      "Bash(uv pip list*)",
+      "Bash(uv pip show*)",
+      "Bash(pytest*)",
+      "Bash(ruff*)",
+
+      "Bash(terraform init*)",
+      "Bash(terraform plan*)",
+      "Bash(terraform validate*)",
+      "Bash(terraform fmt*)",
+      "Bash(terraform show*)",
+      "Bash(terraform state list*)",
+      "Bash(terraform state show*)",
+      "Bash(terraform providers*)",
+
+      "Bash(psql*)",
+      "Bash(mysql*)",
+      "Bash(sqlite3*)",
+      "Bash(EXPLAIN *)",
+
+      "Bash(docker ps*)",
+      "Bash(docker logs*)",
+      "Bash(docker inspect*)",
+      "Bash(docker images*)",
+      "Bash(docker compose config*)",
+      "Bash(docker compose ps*)",
+
+      "Bash(curl*)",
+      "Bash(node*)",
+      "Bash(npm list*)",
+      "Bash(npm show*)",
+      "Bash(npx*)",
+      "Bash(mkdir*)",
+
       "Bash(.claude/ruff_format_hook.sh:*)",
-      "Bash(ls:*)",
-      "Bash(pytest:*)",
       "Bash(make:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(mkdir:*)",
-      "Bash(PYTHONPATH=src:tests uv run:*)",
-      "Bash(PYTHONPATH=src python:*)",
+      "Bash(bash:*)",
+      "Bash(cd:*)",
+      "Bash(find:*)",
       "Bash(sed:*)",
       "Bash(grep:*)",
-      "Bash(python test:*)",
-      "Bash(find:*)",
-      "Bash(python:*)",
-      "Bash(cat:*)",
+      "Bash(chmod:*)",
+      "Bash(PYTHONPATH=src:tests uv run:*)",
+      "Bash(PYTHONPATH=src python:*)",
+
       "mcp__fetch__fetch",
       "mcp__context7__resolve-library-id",
-      "mcp__context7__get-library-docs",
-      "Bash(chmod:*)",
-      "Bash(bash:*)",
-      "Bash(gh issue list:*)",
-      "Bash(gh issue view:*)",
-      "Skill(code-refactoring)"
+      "mcp__context7__get-library-docs"
     ],
-    "deny": [
-      "Read(examples/**)"
-    ]
+    "deny": []
   }
 }
